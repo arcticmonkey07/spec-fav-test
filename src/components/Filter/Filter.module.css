@@ -1,0 +1,91 @@
+.filter {
+  padding: 20px;
+  background-color: rgb(174, 226, 179);
+}
+
+.filter_header_block {
+  display: flex;
+  align-items: center;
+}
+
+.filter_header {
+  margin: 0 0 20px 0;
+}
+
+.filter_button {
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  background-image: url('../../assets/filter.svg');
+  background-repeat: no-repeat;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.filter_button:hover {
+  transform: rotate(90deg);
+}
+
+.filter_button:active {
+  opacity: .5;
+}
+
+.filter_inputs_wrapper {
+  height: 0;
+  transition: all .3s ease;
+}
+
+.filter_inputs_open {
+  height: 140px;
+}
+
+.input {
+  height: 0;
+  margin: 0 20px 20px 0;
+  /* font-size: 0; */
+  border: none;
+  border-bottom: none;
+  background-color: transparent;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.input::placeholder {
+  font-size: 0;
+}
+
+.input_active {
+  height: 15px;
+  /* font-size: 14px; */
+  border-bottom: 1px solid #000;
+  opacity: 1;
+}
+
+.input_active::placeholder {
+  font-size: 14px;
+}
+
+.select_block {
+  margin-bottom: 20px;
+}
+
+.select {
+  width: 200px;
+  opacity: 0;
+}
+
+.select_active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .input {
+    width: 40%;
+  }
+
+  .filter_inputs_open {
+    height: 225px;
+  }
+}

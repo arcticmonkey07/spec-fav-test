@@ -1,0 +1,68 @@
+.sidebar {
+  width: 50px;
+  height: 100vh;
+  padding: 20px;
+  background-color: gray;
+  transition: all 0.3s ease;
+}
+
+.sidebar_active {
+  width: 160px;
+}
+
+.sidebar_logo {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.company_logo {
+  display: block;
+  min-width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-image: url('../../assets/company-logo.svg');
+  background-repeat: no-repeat;
+}
+
+.company_name {
+  color: white;
+  font-weight: 600;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.company_name_active {
+  opacity: 1;
+}
+
+.sidebar_item {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  cursor: pointer;
+}
+
+.sidebar_item:hover .sidebar_name {
+  color: rgb(192, 192, 192);
+}
+
+.sidebar_avatar {
+  min-width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-image: url('../../assets/avatar.svg');
+}
+
+.sidebar_name {
+  color: white;
+  font-weight: 600;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.sidebar_name__active {
+  opacity: 1;
+}

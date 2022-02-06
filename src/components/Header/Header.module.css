@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgb(223, 228, 181);
+}
+
+.input_search {
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+}
+
+.name_block {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.account_name {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+.account_avatar {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url('../../assets/account-avatar.svg');
+}
