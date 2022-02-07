@@ -60,6 +60,7 @@
   color: white;
   font-weight: 600;
   opacity: 0;
+  text-decoration: none;
   transition: all .3s ease;
 }
 

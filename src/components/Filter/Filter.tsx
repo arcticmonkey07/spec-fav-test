@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import * as React from 'react'
 import styles from "./Filter.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { setSortUsers } from "../../redux/actions/users";
+import { RootState } from '../../redux';
+import { useTypedSelector } from './../../hooks/useTypedSelector';
 
 const Filter = ({ isFilterOpen, openFilterHandler }) => {
   const dispatch = useDispatch();
 
-  const users = useSelector(({ users }) => users.users);
+  const users = useTypedSelector(state => state.users.users);
 
   const isFilterOpenClass = isFilterOpen ? styles.filter_inputs_open : "";
   const isFilterOpenInputsClass = isFilterOpen ? styles.input_active : "";

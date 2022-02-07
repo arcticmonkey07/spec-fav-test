@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
+import { FC, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./App.module.css";
 import Filter from "./components/Filter/Filter";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Content from "./components/Content/Content";
 import { fetchUsers } from "./redux/actions/users";
+import AppRouter from "./components/AppRouter/AppRouter";
 
-const App = () => {
+const App: FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const App = () => {
           isFilterOpen={isFilterOpen}
           openFilterHandler={openFilterHandler}
         />
-        <Content />
+        <AppRouter />
       </div>
     </div>
   );

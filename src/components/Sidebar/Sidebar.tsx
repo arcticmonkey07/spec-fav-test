@@ -1,11 +1,11 @@
-import React from "react";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 import styles from "./Sidebar.module.css";
+import { routes } from '../../router/index';
 
 const Sidebar = ({ toggleMenuHandler, isMenuVisible }) => {
   const isMenuVisibleClass = isMenuVisible ? styles.sidebar_active : "";
-
-  const menuItems = ["Главная", "Клиенты", "Сотрудники", "Аналитика"];
-
+  
   return (
     <div
       className={`${styles.sidebar} ${isMenuVisibleClass}`}
@@ -20,18 +20,20 @@ const Sidebar = ({ toggleMenuHandler, isMenuVisible }) => {
           <div className={styles.company_name}>Honest Company</div>
         )}
       </div>
-      {menuItems.map((item) => {
+      {routes.map((route) => {
         return (
-          <div className={styles.sidebar_item} key={item}>
+          <div className={styles.sidebar_item} key={route.path}>
             <div className={styles.sidebar_avatar}></div>
             {isMenuVisible ? (
-              <p
+              <Link
+                to={route.path}
                 className={`${styles.sidebar_name} ${styles.sidebar_name__active}`}
+                key={route.path}
               >
-                {item}
-              </p>
+                {route.name}
+              </Link>
             ) : (
-              <p className={styles.sidebar_name}>{item}</p>
+              <p className={styles.sidebar_name}></p>
             )}
           </div>
         );

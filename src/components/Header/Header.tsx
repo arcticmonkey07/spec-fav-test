@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import * as React from 'react'
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./Header.module.css";
-import { setSearchName } from './../../redux/actions/users';
+import { setSearchName } from '../../redux/actions/users';
+import { RootState } from '../../redux';
+import { useTypedSelector } from './../../hooks/useTypedSelector';
 
 const Header = () => {
   const dispatch = useDispatch();
 
-  const users = useSelector(({ users }) => users.users);
+  const users = useTypedSelector(state => state.users.users);
   const [searchWord, setSearchWord] = useState("");
 
   const onInputChange = (e) => {
@@ -15,10 +18,12 @@ const Header = () => {
 
   const searchHandler = (e) => {
     if (e.key === "Enter") {
-      let searchName = users.filter((item) => {
+      let searchName = users.filter((item: any) => {
         return item.toLowerCase().includes(searchWord.toLowerCase());
       });
-      dispatch(setSearchName(...searchName));
+      
+      const newSearchName: any = [...searchName];
+      dispatch(setSearchName(newSearchName));
     }
   };
 
